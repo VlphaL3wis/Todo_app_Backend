@@ -1,13 +1,14 @@
 <h1>My to-do list</h1>
-    <ul>
-        <li class="color1">
-            <input type="checkbox">
-            <a href="show/1">Homework</a>4 Pomodoros</li>
-        <li class="color2">
-            <input type="checkbox">
-            <a href="show/2">Clean house</a>1 Pomodoro</li>
-        <li class="color3">
-            <input type="checkbox">
-           <a href="show/3">Watch Tv</a>2 Pomodoros</li>
-    </ul>
-    <a id="Add-todo" href="new.html">add to-do</a>
+<ul class="card">
+<% @todos.each do |todo| %>
+  <li>
+    <input type="checkbox" name=""/>
+    <a href="show/<%= todo.id %>"><%= todo.description %></a>
+    <span class="pomodoro-estimate small-pomodoro-estimate"><%= todo.pomodoro_estimate %></span>
+  </li>
+<% end %>
+</ul>
+
+<div id="new-todo-block">
+<a href="/todo/new" class="button add-new-todo-button" id="add-new-todo-button">Add a todo</a>
+</div>
